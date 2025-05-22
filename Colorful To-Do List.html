@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://127.0.0.1:5500/To-Do%20list/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorful To-Do List</title>
+  <link rel="stylesheet" href="./Colorful To-Do List_files/style.css">
+  <link rel="stylesheet" href="./Colorful To-Do List_files/all.min.css">
+  <link href="./Colorful To-Do List_files/css2" rel="stylesheet">
+  <!-- Inside <head> -->
+<link rel="manifest" href="http://127.0.0.1:5500/To-Do%20list/manifest.json">
+<link rel="icon" href="http://127.0.0.1:5500/To-Do%20list/icons/icon-192.png">
+<meta name="theme-color" content="#ff6f61">
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('service-worker.js');
+    });
+  }
+</script>
+
+
+</head>
+<body>
+  <div class="todo-container">
+    <h1>My To-Do List</h1>
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="Add a new task">
+      <button id="addTaskBtn"><i class="fas fa-plus"></i> Add</button>
+    </div>
+    <ul id="taskList"></ul>
+    <button id="clearAllBtn"><i class="fas fa-trash"></i> Clear All</button>
+  </div>
+<div class="input-group">
+  <input type="text" id="taskInput" placeholder="Add a new task">
+  <input type="datetime-local" id="taskTime">
+  <button id="addTaskBtn"><i class="fas fa-plus"></i> Add</button>
+</div>
+
+  <script src="./Colorful To-Do List_files/script.js.download"></script>
+  
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
